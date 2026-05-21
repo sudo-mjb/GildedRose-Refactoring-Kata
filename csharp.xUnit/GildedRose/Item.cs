@@ -22,7 +22,22 @@ public class Item
 
     private void DoAgedBrie()
     {
-        applesauce(true);
+        {
+            if (Quality < 50)
+            {
+                Quality += 1;
+            }
+        }
+
+        SellIn -= 1;
+
+        if (SellIn < 0)
+        {
+            if (Quality < 50)
+            {
+                Quality += 1;
+            }
+        }
     }
 
     private void applesauce(bool isAgedBrie)
