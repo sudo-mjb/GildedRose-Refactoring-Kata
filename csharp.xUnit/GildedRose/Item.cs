@@ -6,8 +6,9 @@ public class Item {
 	public int Quality { get; set; }
 
 	public void UpdateItem() {
-		var isAged = Name != "Aged Brie";
-		if (isAged && Name != "Backstage passes to a TAFKAL80ETC concert") {
+		var isAgedBrie = Name == "Aged Brie";
+		
+		if (!isAgedBrie && Name != "Backstage passes to a TAFKAL80ETC concert") {
 			if (Quality > 0) {
 				if (Name != "Sulfuras, Hand of Ragnaros") {
 					Quality = Quality - 1;
@@ -38,7 +39,7 @@ public class Item {
 		}
 
 		if (SellIn < 0) {
-			if (isAged) {
+			if (!isAgedBrie) {
 				if (Name != "Backstage passes to a TAFKAL80ETC concert") {
 					if (Quality > 0) {
 						if (Name != "Sulfuras, Hand of Ragnaros") {
